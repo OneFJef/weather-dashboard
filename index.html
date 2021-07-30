@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="row">
+            <h1>Weather Dashboard</h1>
+        </header>
+
+        <section class="row">
+            <div class="col-3">
+                <form>
+                    <label for="cityInput" class="form-label">
+                        <h2>Search for a city:</h2>
+                    </label>
+                    <input type="text" class="form-control" id="cityInput" placeholder="Houston">
+                    <button type="button" class="btn btn-primary" id="searchButton">Search</button>
+                </form>
+                <hr>
+                <ul id="searchHistory">
+
+                </ul>
+            </div>
+            <div class="col-9">
+                <section class="row">
+
+                </section>
+                <section class="row">
+                    <h2>5-Day Forecast:</h2>
+                </section>
+            </div>
+        </section>
+    </div>
+
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
+</html>
