@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
 
@@ -12,13 +13,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="row">
+    <div class="container-fluid">
+        <header class="row" id="title">
             <h1>Weather Dashboard</h1>
         </header>
 
         <section class="row">
-            <div class="col-3">
+            <div class="col-3" id="aside">
                 <form>
                     <label for="cityInput" class="form-label">
                         <h2>Search for a city:</h2>
@@ -31,17 +32,56 @@
 
                 </ul>
             </div>
-            <div class="col-9">
-                <section class="row">
-
+            <div class="col" id="dashboard">
+                <section class="row" id="dashboardCurrent">
+                    <h2><span id="searchedLocation"></span> (<span id="currentDate"></span>) <img src="" id="forecastIcon"></h2>
+                    <h4>Temp: <span id="temp"></span>&degF</h4>
+                    <h4>Wind: <span id="wind"></span> MPH</h4>
+                    <h4>Humidity: <span id="humidity"></span>%</h4>
+                    <h4>UV Index: <span class="badge bg-primary" id="uvIndex"></span></h4>
                 </section>
-                <section class="row">
+                <section class="row" id="fiveDayForcast">
                     <h2>5-Day Forecast:</h2>
+                    <div class="col">
+                        <h3 id="day0-date"></h3>
+                        <img src="" id="day0-icon">
+                        <h5>Temp: <span id="day0-temp"></span>&degF</h5>
+                        <h5>Wind: <span id="day0-wind"></span> MPH</h5>
+                        <h5>Humidity: <span id="day0-humidity"></span>%</h5>
+                    </div>
+                    <div class="col">
+                        <h3 id="day1-date"></h3>
+                        <img src="" id="day1-icon">
+                        <h5>Temp: <span id="day1-temp"></span>&degF</h5>
+                        <h5>Wind: <span id="day1-wind"></span> MPH</h5>
+                        <h5>Humidity: <span id="day1-humidity"></span>%</h5>
+                    </div>
+                    <div class="col">
+                        <h3 id="day2-date"></h3>
+                        <img src="" id="day2-icon">
+                        <h5>Temp: <span id="day2-temp"></span>&degF</h5>
+                        <h5>Wind: <span id="day2-wind"></span> MPH</h5>
+                        <h5>Humidity: <span id="day2-humidity"></span>%</h5>
+                    </div>
+                    <div class="col">
+                        <h3 id="day3-date"></h3>
+                        <img src="" id="day3-icon">
+                        <h5>Temp: <span id="day3-temp"></span>&degF</h5>
+                        <h5>Wind: <span id="day3-wind"></span> MPH</h5>
+                        <h5>Humidity: <span id="day3-humidity"></span>%</h5>
+                    </div>
+                    <div class="col">
+                        <h3 id="day4-date"></h3>
+                        <img src="" id="day4-icon">
+                        <h5>Temp: <span id="day4-temp"></span>&degF</h5>
+                        <h5>Wind: <span id="day4-wind"></span> MPH</h5>
+                        <h5>Humidity: <span id="day4-humidity"></span>%</h5>
+                    </div>
                 </section>
             </div>
         </section>
     </div>
-
+    
     <script type="text/javascript" src="./assets/js/script.js"></script>
 </body>
 
