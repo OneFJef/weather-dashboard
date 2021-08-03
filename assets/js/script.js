@@ -1,6 +1,8 @@
 const searchButton$ = $("#searchButton");
 const searchHistory$ = $("#searchHistory");
 
+const cityInput$ = $("#cityInput");
+
 const dashboard$ = $("#dashboard");
 
 const searchedLocation$ = $("#searchedLocation");
@@ -162,7 +164,7 @@ function searchHistory() {
   });
 }
 
-searchButton$.on("click", function (e) {
+function searchSubmit() {
   searchHistory$.empty();
   searches.unshift($("#cityInput").val());
   cityWeatherData();
@@ -170,6 +172,15 @@ searchButton$.on("click", function (e) {
   searchHistory();
   $("#cityInput").val("");
   searches.length = 8;
+}
+
+searchButton$.on("click", searchSubmit);
+cityInput$.on("keypress", function (e) {
+  if (e.which == 13) {
+    e.preventDefault();
+    console.log(e);
+    searchSubmit();
+  }
 });
 
 searchHistory();
